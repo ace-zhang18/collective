@@ -18,11 +18,11 @@ export class EditUserProfileHttpService {
   constructor(private http: HttpClient) {
   }
 
-  submitEdit(id: number, data: string): Observable<string>{
+  submitEdit(id: string, data: string): Observable<string>{
     let packet = new ProfileEdit;
     packet.id = id;
     packet.data = data;
 
-    return this.http.post<string>(`${Globals.apiURL}/user/update/profile`, JSON.stringify(packet), httpOptions);
+    return this.http.post<string>(`${Globals.apiURL}/users/update/profile`, JSON.stringify(packet), httpOptions);
   }
 }

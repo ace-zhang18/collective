@@ -17,6 +17,6 @@ export class UserProfileHttpService {
   }
 
   getProfile(id: string): Observable<string>{
-    return this.http.get<string>(`${Globals.apiURL}/user/profile/${id}`, httpOptions);
+    return this.http.get<string>(`${Globals.apiURL}/users/profile/${id}`, httpOptions);
   }
 }

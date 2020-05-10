@@ -1,8 +1,8 @@
 export class ProfileEdit {
-    id: number;
+    id: string;
     data: string;
     constructor(){
-        this.id = 0;
+        this.id = '';
         this.data = '';
     }
 }

@@ -17,7 +17,7 @@ export class EditUserProfileComponent implements OnInit {
   }
 
   onSubmit(data: string) {
-    this.httpService.submitEdit(1, data)
+    this.httpService.submitEdit('1', data)
     .subscribe(
       data => {
         this.response = data;

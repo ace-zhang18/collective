@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { EditUserProfileComponent } from './user/edit-user-profile/edit-user-profile.component';
+import { ForumsComponent } from './forums/forums.component';
+import { ThreadsComponent } from './threads/threads.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { EditUserProfileComponent } from './user/edit-user-profile/edit-user-pro
     HomeComponent,
     UserComponent,
     UserProfileComponent,
-    EditUserProfileComponent
+    EditUserProfileComponent,
+    ForumsComponent,
+    ThreadsComponent
   ],
   imports: [
     BrowserModule,
