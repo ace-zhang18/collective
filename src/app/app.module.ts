@@ -11,6 +11,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { EditUserProfileComponent } from './user/edit-user-profile/edit-user-profile.component';
 import { ForumsComponent } from './forums/forums.component';
 import { ThreadsComponent } from './threads/threads.component';
+import { ArtworksComponent } from './artworks/artworks.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ThreadsComponent } from './threads/threads.component';
     UserProfileComponent,
     EditUserProfileComponent,
     ForumsComponent,
-    ThreadsComponent
+    ThreadsComponent,
+    ArtworksComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ import { UserComponent } from './user/user.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { EditUserProfileComponent } from './user/edit-user-profile/edit-user-profile.component';
 import { ForumsComponent } from './forums/forums.component';
+import { ThreadsComponent } from './threads/threads.component';
+import { ArtworksComponent } from './artworks/artworks.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'user/profile/:term', component: UserProfileComponent },
   { path: 'user/edit', component: EditUserProfileComponent },
-  { path: 'forums/:term', component: ForumsComponent }
+  { path: 'forums/:term', component: ForumsComponent },
+  { path: 'threads/:term', component: ThreadsComponent },
+  { path: 'artworks/:term', component: ArtworksComponent }
 ];
 
 @NgModule({

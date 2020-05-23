@@ -8,3 +8,8 @@
     </tr>
 </table>
 
+<table>
+    <tr *ngFor="let thread of threads">
+        <td><a routerLink = "/threads/{{thread.thread_id}}">{{thread.title}}</a></td>
+    </tr>
+</table>
