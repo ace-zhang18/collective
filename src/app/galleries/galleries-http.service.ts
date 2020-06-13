@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Globals } from 'src/app/utils/globals'
-import { Artwork } from '../objects/artwork';
+import { Gallery } from '../objects/gallery';
 
 const httpJsonOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'text/plain'}),
@@ -17,16 +17,18 @@ const httpBlobOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ArtworksHttpService  {
+export class GalleriesHttpService {
 
   constructor(private http: HttpClient) {
   }
 
-  getArtwork(id: string): Observable<Artwork>{
-    return this.http.get<Artwork>(`${Globals.apiURL}/artworks/${id}`, httpJsonOptions);
+  getGallery(id: string): Observable<Gallery>{
+    console.log(id);
+    return this.http.get<Gallery>(`${Globals.apiURL}/galleries/${id}`, httpJsonOptions);
   }
 
-  getArtworkFile(id: string): Observable<Blob>{
-    return this.http.get<Blob>(`${Globals.apiURL}/artworks/file/${id}`, httpBlobOptions)
+  getThumbnail(id: string): Observable<Blob>{
+    console.log(id)
+    return this.http.get<Blob>(`${Globals.apiURL}/galleries/thumbnails/${id}`, httpBlobOptions);
   }
 }

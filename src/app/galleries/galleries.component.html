@@ -1,0 +1,10 @@
+<div style="text-align:center">
+    <h1>{{gallery.title}}</h1>
+    <table>
+        <tr>
+            <td *ngFor="let item of fileURL">
+                <img [src]="item">
+            </td>
+        </tr>
+    </table>
+</div>

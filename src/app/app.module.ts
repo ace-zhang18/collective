@@ -12,6 +12,7 @@ import { EditUserProfileComponent } from './user/edit-user-profile/edit-user-pro
 import { ForumsComponent } from './forums/forums.component';
 import { ThreadsComponent } from './threads/threads.component';
 import { ArtworksComponent } from './artworks/artworks.component';
+import { GalleriesComponent } from './galleries/galleries.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ArtworksComponent } from './artworks/artworks.component';
     EditUserProfileComponent,
     ForumsComponent,
     ThreadsComponent,
-    ArtworksComponent
+    ArtworksComponent,
+    GalleriesComponent
   ],
   imports: [
     BrowserModule,
