@@ -9,6 +9,7 @@ import { ForumsComponent } from './forums/forums.component';
 import { ThreadsComponent } from './threads/threads.component';
 import { ArtworksComponent } from './artworks/artworks.component';
 import { GalleriesComponent } from './galleries/galleries.component';
+import { ShopsComponent } from './shops/shops.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'forums/:term', component: ForumsComponent },
   { path: 'threads/:term', component: ThreadsComponent },
   { path: 'artworks/:term', component: ArtworksComponent },
-  { path: 'galleries/:term', component: GalleriesComponent }
+  { path: 'galleries/:term', component: GalleriesComponent },
+  { path: 'shops/:term', component: ShopsComponent}
 ];
 
 @NgModule({

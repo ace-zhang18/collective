@@ -13,6 +13,7 @@ import { ForumsComponent } from './forums/forums.component';
 import { ThreadsComponent } from './threads/threads.component';
 import { ArtworksComponent } from './artworks/artworks.component';
 import { GalleriesComponent } from './galleries/galleries.component';
+import { ShopsComponent } from './shops/shops.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { GalleriesComponent } from './galleries/galleries.component';
     ForumsComponent,
     ThreadsComponent,
     ArtworksComponent,
-    GalleriesComponent
+    GalleriesComponent,
+    ShopsComponent
   ],
   imports: [
     BrowserModule,
