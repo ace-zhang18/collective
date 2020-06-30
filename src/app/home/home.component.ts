@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeHttpService } from './home-http.service'
+import { Ng2ImgMaxService } from 'ng2-img-max';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    private http: HomeHttpService,
+    private ng2ImgMax: Ng2ImgMaxService
+  ) { }
 
   ngOnInit() {
+
   }
 
 }

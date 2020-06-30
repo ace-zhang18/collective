@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ArtworksHttpService } from './artworks-http.service'
 import { Artwork } from '../objects/artwork';
 import { DomSanitizer } from '@angular/platform-browser'
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-artworks',
@@ -23,15 +25,15 @@ export class ArtworksComponent implements OnInit {
   ngOnInit(): void {
     this.term = this.route.snapshot.paramMap.get('term');
     this.http.getArtwork(this.term)
-    .subscribe(
-      data => {
-        this.artwork = data;
+    .pipe(
+      map(data => {
+        this.artwork = data,
         this.http.getArtworkFile(this.term)
-        .subscribe(
-          data=>{
-            this.fileURL = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(data));
-          }
-        )
+        }
+      )
+    ).subscribe(
+      data=>{
+        this.fileURL = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(data));
       }
     )
   }
