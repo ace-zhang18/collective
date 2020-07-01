@@ -18,6 +18,7 @@ import { GalleriesComponent } from './galleries/galleries.component';
 import { ShopsComponent } from './shops/shops.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import { NgMarqueeModule } from 'ng-marquee';
 
 import { Ng2ImgMaxService, ImgMaxSizeService, ImgExifService, ImgMaxPXSizeService} from 'ng2-img-max';
 import { Ng2PicaService } from 'ng2-pica';
@@ -45,7 +46,8 @@ import { Ng2PicaService } from 'ng2-pica';
     BrowserAnimationsModule,
     MatListModule,
     Ng2ImgMaxModule,
-    CdkScrollableModule
+    CdkScrollableModule,
+    NgMarqueeModule
   ],
   providers: [
     Ng2ImgMaxService,
