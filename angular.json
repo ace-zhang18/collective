@@ -90,7 +90,8 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/fonts.css"
             ],
             "scripts": [
               "./node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.min.js"
