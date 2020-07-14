@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Globals } from 'src/app/utils/globals'
-import { Thread } from '../objects/thread';
-import { Post } from '../objects/post';
+import { Thread } from 'src/app/objects/thread';
+import { Post } from 'src/app/objects/post';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'text/plain'}),

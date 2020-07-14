@@ -9,8 +9,12 @@ table {
 }
 
 .home-feed{
-    width: 50%;
+    width: 40%;
 }
 .front-display{
-    width: 50%;
+    width: 40%;
+}
+
+.buffer{
+    width: 10%;
 }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ThreadsHttpService } from './threads-http.service'
-import { Forum } from '../objects/forum';
-import { Thread } from '../objects/thread';
-import { Post } from '../objects/post';
+import { Forum } from 'src/app/objects/forum';
+import { Thread } from 'src/app/objects/thread';
+import { Post } from 'src/app/objects/post';
 
 @Component({
   selector: 'app-threads',
@@ -14,7 +14,8 @@ import { Post } from '../objects/post';
 export class ThreadsComponent implements OnInit {
 
   term: string;
-  thread_title: string;
+  //thread_title: string;
+  thread_title = 'SAMPLE TITLE'
   posts: Post[];
 
   constructor(private route: ActivatedRoute,

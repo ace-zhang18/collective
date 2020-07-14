@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtworksHttpService } from './artworks-http.service'
-import { Artwork } from '../objects/artwork';
+import { Artwork } from 'src/app/objects/artwork';
 import { DomSanitizer } from '@angular/platform-browser'
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
