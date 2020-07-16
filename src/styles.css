@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "./fonts.css";
 
   html, body {
     height: 100%;
     margin: 0;
-    background-image:url('src\assets\sci-fi-background.jpg');
+    background-image:url('src/assets/sci-fi-background.jpg');
     background-size: 100%;
     background-position: center;
   }

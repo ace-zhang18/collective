@@ -1,0 +1,13 @@
+table, th, td {
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+.lightgray{
+  background-color: rgba(255, 255, 255, 0.5)
+  
+}
+
+.darkgray{
+  background-color: rgba(255, 255, 255, 0.11)
+}

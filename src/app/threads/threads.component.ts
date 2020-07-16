@@ -22,6 +22,7 @@ export class ThreadsComponent implements OnInit {
               private http: ThreadsHttpService) { }
 
   ngOnInit(): void {
+    /*
     this.term = this.route.snapshot.paramMap.get('term');
     this.http.getThread(this.term)
     .subscribe(
@@ -35,5 +36,6 @@ export class ThreadsComponent implements OnInit {
         )
       }
     )
+    */
   }
 }

@@ -2,6 +2,7 @@ nav a {
     color: white;
     font-family: acid;
     font-size: 20px;
-    margin: 0 10px
-
+    letter-spacing: 2px;
+    margin: 0 10px;
+    text-decoration: none;
   }
