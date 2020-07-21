@@ -1,53 +1,29 @@
 <div style="text-align:center">
-    <h1>{{gallery.title}}</h1>
+    <h1>SAMPLE TITLE</h1>
     <table>
-        <tr>
-            <td style ="height: 270px">
-                
-            </td>
-        </tr>
-        <tr>
-            <td style ="height: 220px">
-                
-            </td>
-        </tr>
-        <tr>
-            <td style ="height: 260px">
-                
+        <tr *ngFor="let item of column1">
+            <td class="preview">
+                <div class="side-crop">
+                    <img #preview (load)="onLoad(preview)" src="{{item}}">
+                </div>
             </td>
         </tr>
     </table>
     <table>
-        <tr>
-            <td style ="height: 300px">
-
-            </td>
-        </tr>
-        <tr>
-            <td style ="height: 400px">
-
-            </td>
-        </tr>
-        <tr>
-            <td style ="height: 220px">
-                
+        <tr *ngFor="let item of column2">
+            <td class="preview">
+                <div class="side-crop">
+                    <img #preview (load)="onLoad(preview)" src="{{item}}">
+                </div>
             </td>
         </tr>
     </table>
     <table>
-        <tr>
-            <td style ="height: 220px">
-                
-            </td>
-        </tr>
-        <tr>
-            <td style ="height: 300px">
-                
-            </td>
-        </tr>
-        <tr>
-            <td style ="height: 400px">
-                
+        <tr *ngFor="let item of column3">
+            <td class="preview">
+                <div class="side-crop">
+                    <img #preview (load)="onLoad(preview)" src="{{item}}">
+                </div>
             </td>
         </tr>
     </table>
