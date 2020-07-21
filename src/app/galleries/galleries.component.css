@@ -1,0 +1,14 @@
+table {
+    display: inline-block;
+    vertical-align: top;
+}
+
+tr {
+    width: 160px;
+}
+
+td {
+    border: 1px solid white;
+    width: 160px;
+    min-height: 220px;
+}

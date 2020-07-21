@@ -15,7 +15,7 @@ import { map, flatMap, mergeMap } from 'rxjs/operators'
 export class GalleriesComponent implements OnInit {
 
   gallery: Gallery;
-  fileURL = [];
+  fileURStream = [];
   subj = new BehaviorSubject<Gallery>(null);
 
   constructor(private route: ActivatedRoute,
@@ -23,7 +23,8 @@ export class GalleriesComponent implements OnInit {
               private sanitizer: DomSanitizer) { }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+    `
     of(this.route.snapshot.paramMap.get('term'))
     .pipe(
       flatMap(term => this.http.getGallery(term)),
@@ -39,5 +40,6 @@ export class GalleriesComponent implements OnInit {
         this.fileURL.push(sanit)
       } 
     );
+    `
   }
 }
