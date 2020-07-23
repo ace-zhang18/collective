@@ -7,3 +7,9 @@ table {
     max-width: 160px;
     overflow: hidden;
 }
+
+img {
+    display: block;
+    margin-bottom: 0px;
+    outline: 0px;
+}

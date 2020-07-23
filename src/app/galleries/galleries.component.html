@@ -1,10 +1,21 @@
-<div style="text-align:center">
-    <h1>SAMPLE TITLE</h1>
-    <table>
+<div 
+class="page"
+style="text-align:center;"
+infiniteScroll
+[scrollWindow]="true"
+[infiniteScrollDistance]="2"
+[infiniteScrollUpDistance]="1.5"
+[infiniteScrollThrottle]="50"
+(scrolled)="onScrollDown()"
+(scrolledUp)="onScrollUp()"
+>
+    <h1>{{title}}</h1>
+    <p *ngIf="empty">Oh noes! This gallery is empty!</p>
+    <table style="padding-bottom: 0px;">
         <tr *ngFor="let item of column1">
             <td class="preview">
                 <div class="side-crop">
-                    <img #preview (load)="onLoad(preview)" src="{{item}}">
+                    <img #preview (load)="onLoad(preview, 1)" src="{{item}}">
                 </div>
             </td>
         </tr>
@@ -13,16 +24,16 @@
         <tr *ngFor="let item of column2">
             <td class="preview">
                 <div class="side-crop">
-                    <img #preview (load)="onLoad(preview)" src="{{item}}">
+                    <img #preview (load)="onLoad(preview, 2)" src="{{item}}">
                 </div>
             </td>
         </tr>
     </table>
-    <table>
+    <table  >
         <tr *ngFor="let item of column3">
-            <td class="preview">
+            <td >
                 <div class="side-crop">
-                    <img #preview (load)="onLoad(preview)" src="{{item}}">
+                    <img #preview (load)="onLoad(preview, 3)" src="{{item}}">
                 </div>
             </td>
         </tr>
