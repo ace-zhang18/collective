@@ -13,7 +13,6 @@ let pageHeight = 2000
   styles: [
     `
       td {
-        border: 1px solid white;
         min-width: ${minWidth}px;
         min-height: ${minHeight}px;
         padding-bottom: 0px;
@@ -30,6 +29,7 @@ export class GalleriesComponent implements OnInit {
   title = "SAMPLE TITLE"
 
   item = [
+  "assets/1.gif", "assets/2.gif", "assets/3.gif", "assets/4.gif", "assets/5.gif",
   "assets/1.jpg", "assets/2.jpg", "assets/3.jpg", "assets/4.jpg", "assets/5.jpg",
   "assets/6.jpg", "assets/7.jpg", "assets/8.jpg", "assets/9.jpg", "assets/10.jpg",
   "assets/11.jpg", "assets/12.jpg", "assets/13.jpg", "assets/14.jpg", "assets/15.jpg",
