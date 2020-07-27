@@ -1,6 +1,6 @@
 <div 
 class="page"
-style="text-align:center;"
+style="text-align:center; vertical-align: middle;"
 infiniteScroll
 [scrollWindow]="true"
 [infiniteScrollDistance]="2"
@@ -13,28 +13,25 @@ infiniteScroll
     <p *ngIf="empty">Oh noes! This gallery is empty!</p>
     <table>
         <tr *ngFor="let item of column1">
-            <td class="preview">
-                <div class="side-crop">
-                    <img #preview (load)="onLoad(preview, 1)" src="{{item}}">
-                </div>
+            <td class="container">
+                <img #preview (load)="onLoad(preview, 1)" class="img" src="{{item}}">
+                <div class="title">{{item}}</div>
             </td>
         </tr>
     </table>
     <table>
         <tr *ngFor="let item of column2">
-            <td class="preview">
-                <div class="side-crop">
-                    <img #preview (load)="onLoad(preview, 2)" src="{{item}}">
-                </div>
+            <td class="container">
+                <img #preview (load)="onLoad(preview, 2)" class="img" src="{{item}}">
+                <div class="title">{{item}}</div>
             </td>
         </tr>
     </table>
     <table  >
         <tr *ngFor="let item of column3">
-            <td >
-                <div class="side-crop">
-                    <img #preview (load)="onLoad(preview, 3)" src="{{item}}">
-                </div>
+            <td class="container">
+                <img #preview (load)="onLoad(preview, 3)" class="img" src="{{item}}">
+                <div class="title">{{item}}</div>
             </td>
         </tr>
     </table>
