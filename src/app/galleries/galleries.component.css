@@ -14,22 +14,38 @@ table {
     filter: brightness(100%);
     transition: 0.3s;
 }
-  
-.container:hover .img { 
-    filter: brightness(70%);
-}
+
 
 .title {
     position: absolute;
+    height: 40px;
+    top: 0px;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: 0.3s;
+    order: 1;
+}
+  
+.text {
+    position: absolute;
     color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    height: 100%;
     top: 50%;
+    width: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: 0.3s;
+    order: 0;
 }
-  
+
 .container:hover .title { 
-    opacity: 1;    
+    opacity: 0.5;
+    background-color: black;
+}
+
+.container:hover .text{ 
+    opacity: 1;
 }

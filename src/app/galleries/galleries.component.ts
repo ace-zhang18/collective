@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChildren, ElementRef, ViewChild } from '@angular
 import { ActivatedRoute } from '@angular/router';
 import { GalleriesHttpService } from './galleries-http.service';
 
-const minWidth = 160
+const minWidth = 19
 const minHeight = 0
 let pageHeight = 2000
 
@@ -13,8 +13,8 @@ let pageHeight = 2000
   styles: [
     `
       td {
-        min-width: ${minWidth}px;
-        min-height: ${minHeight}px;
+        min-width: ${minWidth}vw;
+        min-height: ${minHeight}vh;
         padding-bottom: 0px;
       }
     `
@@ -25,6 +25,7 @@ export class GalleriesComponent implements OnInit {
 
   pageHeight = window.innerHeight;
   extension = 400
+  scrollLock = false;
 
   title = "SAMPLE TITLE"
 
@@ -47,7 +48,11 @@ export class GalleriesComponent implements OnInit {
   height2 = 0;
   column3 = [];
   height3 = 0;
-
+  column4 = [];
+  height4 = 0;
+  column5 = [];
+  height5 = 0;
+  
   empty = false;
 
   constructor(private route: ActivatedRoute,
@@ -81,13 +86,7 @@ export class GalleriesComponent implements OnInit {
   }
   
   onLoad(preview: any, index: number) {
-    preview.style.overflow = "hidden"
-    let ratio = minHeight/minWidth
-    if((preview.height/preview.width) > ratio){
-      preview.style.width = '160px';
-    }else{
-      //preview.style.height = '220px';
-    }
+    preview.style.width = minWidth.toString() + 'vw';
     switch(index){
       case 1:
         this.height1 += preview.offsetHeight
@@ -98,27 +97,49 @@ export class GalleriesComponent implements OnInit {
       case 3:
         this.height3 += preview.offsetHeight
         break;
+      case 4:
+        this.height4 += preview.offsetHeight
+        break;
+      case 5:
+        this.height5 += preview.offsetHeight
+        break;
     }
-    if(this.height1 < this.pageHeight && this.height2 < this.pageHeight && this.height3 < this.pageHeight){
+    if(this.height1 < this.pageHeight || this.height2 < this.pageHeight || this.height3 < this.pageHeight || this.height4 < this.pageHeight || this.height5 < this.pageHeight){
       this.transfer()
+    }else{
+      this.scrollLock = false;
     }
   }
 
   transfer(){
+    let min = Math.min(this.height1, this.height2, this.height3, this.height4, this.height5)
     if(this.item.length > 0){
-      if(this.height1 <= this.height2 && this.height1 <= this.height3){
-        this.column1.push(this.item[0])
-      }else if (this.height2 <= this.height3){
-        this.column2.push(this.item[0])
-      }else{
-        this.column3.push(this.item[0])
+      switch(min){
+        case this.height1:
+          this.column1.push(this.item[0])
+          break
+        case this.height2:
+          this.column2.push(this.item[0])
+          break
+        case this.height3:
+          this.column3.push(this.item[0])
+          break
+        case this.height4:
+          this.column4.push(this.item[0])
+          break
+        case this.height5:
+          this.column5.push(this.item[0])
+          break  
       }
       this.item = this.item.slice(1);
     }
   }
 
   onScrollDown() {
-    this.pageHeight += this.extension;
+    if(!this.scrollLock){
+      this.pageHeight += this.extension;
+      this.scrollLock = true;
+    }
     this.transfer()
   }
  
