@@ -1,6 +1,6 @@
 <div 
 class="page"
-style="text-align:center; vertical-align: middle;"
+style="text-align:center; width:100%; vertical-align: middle;"
 infiniteScroll
 [scrollWindow]="true"
 [infiniteScrollDistance]="2"
@@ -9,7 +9,11 @@ infiniteScroll
 (scrolled)="onScrollDown()"
 (scrolledUp)="onScrollUp()"
 >
-    <h1>{{title}}</h1>
+    <div style="width: 100%;">
+        <h1>Gallery Title</h1>
+        <input type="text">
+        <button><img src="assets/search-icon.jpg"></button>
+    </div>
     <p *ngIf="empty">Oh noes! This gallery is empty!</p>
     <table>
         <tr *ngFor="let item of column1">

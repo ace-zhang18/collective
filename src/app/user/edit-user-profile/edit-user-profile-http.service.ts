@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { ProfileEdit } from 'src/app/objects/profile-edit'
 import { Globals } from 'src/app/utils/globals'
 
 const httpOptions = {
@@ -19,9 +18,10 @@ export class EditUserProfileHttpService {
   }
 
   submitEdit(id: string, data: string): Observable<string>{
-    let packet = new ProfileEdit;
-    packet.id = id;
-    packet.data = data;
+    let packet = {
+      'id': id,
+      'data': data
+    };
 
     return this.http.post<string>(`${Globals.apiURL}/users/update/profile`, JSON.stringify(packet), httpOptions);
   }

@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChildren, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GalleriesHttpService } from './galleries-http.service';
+import { map, mergeMap, flatMap } from 'rxjs/operators';
+import { ArtworksHttpService } from '../artworks/artworks-http.service';
+import { of } from 'rxjs/internal/observable/of';
+import { DomSanitizer } from '@angular/platform-browser';
 
 const minWidth = 19
 const minHeight = 0
@@ -29,19 +33,7 @@ export class GalleriesComponent implements OnInit {
 
   title = "SAMPLE TITLE"
 
-  item = [
-  "assets/1.gif", "assets/2.gif", "assets/3.gif", "assets/4.gif", "assets/5.gif",
-  "assets/1.jpg", "assets/2.jpg", "assets/3.jpg", "assets/4.jpg", "assets/5.jpg",
-  "assets/6.jpg", "assets/7.jpg", "assets/8.jpg", "assets/9.jpg", "assets/10.jpg",
-  "assets/11.jpg", "assets/12.jpg", "assets/13.jpg", "assets/14.jpg", "assets/15.jpg",
-  "assets/16.jpg", "assets/17.jpg", "assets/18.jpg", "assets/19.jpg", "assets/20.jpg",
-  "assets/21.jpg", "assets/22.jpg", "assets/23.jpg", "assets/24.jpg", "assets/25.jpg",
-  "assets/26.jpg", "assets/27.jpg", "assets/28.jpg", "assets/29.jpg", "assets/30.jpg",
-  "assets/31.jpg", "assets/32.jpg", "assets/33.jpg", "assets/34.jpg", "assets/35.jpg",
-  "assets/36.jpg", "assets/37.jpg", "assets/38.jpg", "assets/39.jpg", "assets/40.jpg",
-  "assets/41.jpg", "assets/42.jpg", "assets/43.jpg", "assets/44.jpg", "assets/45.jpg",
-  "assets/46.jpg", "assets/47.jpg", "assets/48.jpg"
-  ];
+  items = ['assets/100.gif','assets/101.gif','assets/102.jpg','assets/103.jpg','assets/104.gif'];
   column1 = [];
   height1 = 0;
   column2 = [];
@@ -56,8 +48,10 @@ export class GalleriesComponent implements OnInit {
   empty = false;
 
   constructor(private route: ActivatedRoute,
-              private http: GalleriesHttpService) { 
-                if (this.item.length <= 0){
+              private http: GalleriesHttpService,
+              private artHttp: ArtworksHttpService,
+              private sanitizer: DomSanitizer) { 
+                if (this.items.length <= 0){
                   this.empty = true;
                 }
               }
@@ -65,26 +59,14 @@ export class GalleriesComponent implements OnInit {
 
   ngOnInit(): void {    
     this.transfer();
-    console.log(pageHeight);
-    `
-    of(this.route.snapshot.paramMap.get('term'))
-    .pipe(
+    of(this.route.snapshot.paramMap.get('term')).pipe(
       flatMap(term => this.http.getGallery(term)),
-      flatMap(gallery => {
-        this.gallery = gallery;
-        return from(gallery.collection)
-      }),
-      mergeMap(element => this.http.getThumbnail(element.toString())),
-      map(data => URL.createObjectURL(data)),
-      map(url => this.sanitizer.bypassSecurityTrustResourceUrl(url)),
+      flatMap(gal => gal.collection)
     ).subscribe(
-      sanit => {
-        this.fileURL.push(sanit)
-      } 
-    );
-    `
+      result => console.log(result)
+    )
   }
-  
+
   onLoad(preview: any, index: number) {
     preview.style.width = minWidth.toString() + 'vw';
     switch(index){
@@ -113,25 +95,25 @@ export class GalleriesComponent implements OnInit {
 
   transfer(){
     let min = Math.min(this.height1, this.height2, this.height3, this.height4, this.height5)
-    if(this.item.length > 0){
+    if(this.items.length > 0){
       switch(min){
         case this.height1:
-          this.column1.push(this.item[0])
+          this.column1.push(this.items[0])
           break
         case this.height2:
-          this.column2.push(this.item[0])
+          this.column2.push(this.items[0])
           break
         case this.height3:
-          this.column3.push(this.item[0])
+          this.column3.push(this.items[0])
           break
         case this.height4:
-          this.column4.push(this.item[0])
+          this.column4.push(this.items[0])
           break
         case this.height5:
-          this.column5.push(this.item[0])
+          this.column5.push(this.items[0])
           break  
       }
-      this.item = this.item.slice(1);
+      this.items = this.items.slice(1);
     }
   }
 

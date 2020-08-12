@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Globals } from 'src/app/utils/globals'
-import { Artwork } from 'src/app/objects/artwork';
 
 const httpJsonOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'text/plain'}),
@@ -22,11 +21,12 @@ export class ArtworksHttpService  {
   constructor(private http: HttpClient) {
   }
 
-  getArtwork(id: string): Observable<Artwork>{
-    return this.http.get<Artwork>(`${Globals.apiURL}/artworks/${id}`, httpJsonOptions);
+  getArtwork(id: string): Observable<any>{
+    console.log("test 3")
+    return this.http.get<any>(`${Globals.apiURL}/artworks/${id}`, httpJsonOptions);
   }
 
   getArtworkFile(id: string): Observable<Blob>{
-    return this.http.get<Blob>(`${Globals.apiURL}/artworks/file/${id}`, httpBlobOptions)
+    return this.http.get<Blob>(`${Globals.apiURL}/artworks/file/${id}`, httpBlobOptions);
   }
 }
