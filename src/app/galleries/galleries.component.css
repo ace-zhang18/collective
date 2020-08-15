@@ -1,6 +1,7 @@
-table {
-    display: inline-block;
+.column {
+    float: left;
     vertical-align: top;
+    width: 20%;
 }
 
 .container { 

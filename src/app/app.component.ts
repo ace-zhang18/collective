@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'collective';
+  searching = false;
+
+  displaySearch(){
+    this.searching = true;
+    document.querySelector('.input').classList.toggle('expand');
+  }
 }
