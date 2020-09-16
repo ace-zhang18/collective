@@ -9,7 +9,6 @@ import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 const minWidth = 19
 const minHeight = 0
-let pageHeight = 2000
 
 @Component({
   selector: 'app-galleries',

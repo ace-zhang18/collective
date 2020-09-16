@@ -1,39 +1,177 @@
-<table class="mainpage" style=" height: 100%; width: 100%;"> <!-- background-color: turquoise;border-style: solid; border-color: black; -->
-  <tr style="height: 50%" class="showcase">
-    <td rowspan="2" class="buffer">
-
-    </td>
-    <td style="position: relative;">
-        <div style="position: absolute; bottom:25%; height: 50%; width: 80%; overflow: auto; display: inline-block; ">
-          <h1 style="text-align: left;">SAMPLE TITLE</h1>
-          <p style="vertical-align: top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-    </td>
-    <td width="30%">
-      <img src="assets/103.jpg" style="max-height: 300px;float:right" class="showcase-img">
-    </td>
-    <td rowspan="2" class="buffer">
-
+<table style="width: 1240px; margin-left: auto; margin-right: auto; border-collapse: collapse;">
+  <tr style="height: 25px;" >
+    <td colspan="2" class="height: 20px; padding-bottom: 20px" >
+      <table style="margin-right: auto; padding-top: 7px; padding-bottom: 8px; ">
+        <tr>
+          <td class="header1 page_text" style="width:15%; text-align: right ;">
+            RECENT UPDATES
+          </td>
+          <td class="header1" style="width: auto">
+            <img src="assets/small_border.png" style="width: 100%; height: inherit;">
+          </td>
+          <td class="header1 page_text" style="width:15%; text-align: left;">
+            GALLERY GEMS 
+          </td>
+        </tr>
+      </table>      
     </td>
   </tr>
-  <tr style="height: 50%">
-    <td class="home-feed" style="position:relative; height: 100%;">
-      <div style="position:absolute; height: 80%; width:80%; bottom: 10%; overflow: auto;">
-        <table style="width:100%; border: 1px solid white; ">
-          <tr *ngFor="let msg of status" style="height: 100px;  border: 1px solid white;">
-            <td>{{msg}}</td>
+  <tr >
+    <td class="page_text half_content" style="height: 100%; font-size: 5px; padding-right: 15px; border-right: 1px solid goldenrod;">
+      <div style="height: 335px; margin-top: auto; margin-bottom: auto; padding-left: 15px; padding-right: 15px;
+                  background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
+                  overflow-x: hidden; overflow-y:scroll; direction: rtl;" id="style-1">
+        <table style="width: 100%; height: 100%;">
+          <tr *ngFor="let announcement of site_announcements" style="height: 100px; width: 100%; border: 1px solid gray" >
+            <td style="height:75px;">
+              <div style="height:10px; text-align: left">
+                <h5>{{announcement.title}}</h5>
+              </div>
+              <div style="height:50px; text-align: left; line-height: 15px ;overflow: hidden;">
+                <p class="paragraph">{{announcement.body}}</p>
+              </div>
+              <div style="height:10px; text-align: left;  border-bottom: 1px solid goldenrod;">
+                
+              </div>
+              <div style="height:5px; text-align: left;">
+                
+              </div>
+            </td>
           </tr>
         </table>
       </div>
     </td>
-    <td class="front-gallery" style="position: relative;">
-      <ng-marquee style="float:right">  
-          <img src="assets/101.gif" class="showcase-img">
-          <img src="assets/102.jpg" class="showcase-img">
-          <img src="assets/103.jpg" class="showcase-img">
-      </ng-marquee>
+    <td class="half_content" style="height: 100%; color: white; font-size: 5px; align-content: left; padding-left: 13px; border-left: 1px solid goldenrod;">
+      <div style="width: 100%; height: 330px; margin-top: auto; margin-bottom: auto;">
+        <table style="width: 100%; height: 330px;  margin-left:auto; margin-right:0; border-collapse: collapse;">
+          <tr style="width: 100%; display: block;">
+            <td class="banner_feature" colspan="5">
+              <img #preview0 (load)="loadBanner(preview0)" src="assets/136.jpg">
+            </td>
+          </tr>
+          <tr style="display: block;">
+            <td class="row_cell">
+              <img #preview1 (load)="onLoad(preview1)" class="featured_row" src="assets/100.gif">
+            </td>
+            <td class="row_cell">
+              <img #preview2 (load)="onLoad(preview2)" class="featured_row" src="assets/124.jpg">
+            </td>
+            <td class="row_cell">
+              <img #preview3 (load)="onLoad(preview3)" class="featured_row" src="assets/108.gif">                
+            </td>
+            <td class="row_cell">
+              <img #preview4 (load)="onLoad(preview4)" class="featured_row" src="assets/133.jpg">                                
+            </td>
+            <td class="row_cell">
+              <img #preview5 (load)="onLoad(preview5)" class="featured_row" src="assets/140.jpg">                   
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="content_title">
+      <div style="padding-top: 30px;">
+        <table style="margin-left: auto; margin-right: auto; height: 25px;">
+          <tr>
+            <td>
+              <img class="page_text" src="assets/events_l.png" style="max-height: 20px; width: auto; margin-right: 3px;">
+            </td>
+            <td>
+              <p style="font-size: 18px;">EVENTS</p>
+            </td>
+            <td>
+              <img class="page_text" src="assets/events_r.png"  style="max-height: 20px; width: auto" >
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr style="width: 100%;">
+    <td colspan="2" style="height: 100%; vertical-align: middle;">
+      <div [@ExpandAndContractAnimation150by400]="isOpen ? '1' : '0'" style="width: 100%; height: 150px; position:relative;">
+        <div style="height: calc(100% - 58px); width: calc(100% - 2px) ; position:absolute; overflow: hidden; top: 10px;">
+          <img src="assets/backdrop_room.png"  style="width: 100%;">
+        </div>
+        <button class="graphic_button" (click)="toggle()" [ngStyle]="{'bottom': !isOpen ? '0px' : '40px' }" 
+                style="position: absolute; padding: 0; left: 0px; right: 0px; margin-left: auto; margin-right: auto; ">
+          <div *ngIf="!isOpen; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
+            <img src="assets/expand_banner.png" style="max-width: 100px; height: auto">
+          </ng-template>
+          <ng-template #elseBlock>
+            <img src="assets/expand_banner.png" style="max-width: 100px; height: auto;" class="rotate_img_180">
+          </ng-template>
+        </button> 
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <div style="padding-top: 15px; margin-bottom: 15px;">
+        <img src="assets/small_border.png" style="max-width: 820px; margin-right: auto; margin-left: auto;">
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="colfill page_text" style="height: 100%; font-size: 5px;">
+      <table>
+        <tr style="height: 450px;">
+          <td style="width: calc(100%-30px)">
+            <div [@WidenAndShrinkAnimation600by620]="panelOn ? '0' : '1'"
+                  style="width: calc(100% - 30px); height: 450px; margin-top: auto; margin-bottom: auto; padding-left: 15px; padding-right: 15px;
+                        background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
+                        overflow-x: hidden; overflow-y:scroll;" id="style-1">
+              <table style="width: 100%; height: 100%;">
+                <tr *ngFor="let announcement of site_announcements;let i=index;" style="height: 75px; width: 100%;">
+                  <td style="height:70px; width: 90%;">
+                    <div style="height:30px; text-align: left">
+                      <h3>{{announcement.title}}</h3>
+                    </div>
+                    <div style="height:40px; text-align: left; line-height: 10px ;overflow: hidden; border-bottom: 1px solid goldenrod;">
+                      <p class="paragraph">{{announcement.body}}</p>
+                    </div>
+                  </td>
+                  <td style="width: 10%;">
+                    <button class="graphic_button" (click)="showStatus(i)">
+                      <div *ngIf="!focus[i]; then thenBlock else elseBlock"></div>
+                      <ng-template #thenBlock>
+                        <img src="assets/nav_arrow.png" style="max-height: 30px;" class="rotate_img_180">
+                      </ng-template>
+                      <ng-template #elseBlock>
+                        <img src="assets/nav_arrow.png" style="max-height: 30px;" class="rotate_img_270">
+                      </ng-template>
+                    </button>                 
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div [@WidenAndShrinkAnimation0by100]="panelOn ? '1' : '0'"
+            style="width: 0; height: 450px; margin-top: auto; margin-bottom: auto;
+                  background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
+                  overflow-x: hidden; overflow-y:scroll;" id="style-1">
+
+            </div>
+          </td>
+          <td>
+            <div [@WidenAndShrinkAnimation0by520]="panelOn ? '1' : '0'"
+            style="width: 0; height: 450px; margin-top: auto; margin-bottom: auto;
+                  background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
+                  overflow-x: hidden; overflow-y:scroll;" id="style-1">
+
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr style="height: 15px">
+    <td colspan="2">
+
     </td>
   </tr>
 </table>

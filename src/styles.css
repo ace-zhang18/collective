@@ -1,17 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./fonts.css";
-
   html, body {
     height: 100%;
     margin: 0;
-    background-image:url('src/assets/sci-fi-background.jpg');
+    background-image:url('src/assets/raven-background.jpg');
     background-size: 100%;
     background-position: center;
+    background-attachment: fixed;
   }
 
   p, h1, h2, h3, h4, h5 {
     color: white;
   }
 
-html, body { height: 100%; }
+  .paragraph {
+    font-family: "Arial";
+  }
+
+  .menu_option {
+    font-family: "Franklin Gothic";
+  }
+
+  .content_title {
+    font-family: Mongolian;
+    letter-spacing: 2px;
+  }
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  .o1 {
+    border: 1px solid red
+  }
+
+  .o2{
+    border: 1px solid green
+  }
+
+  .o3{
+    border: 1px solid blue
+  }
+
+  .inflate{
+    height: 100%;
+    width: 100%;
+  }

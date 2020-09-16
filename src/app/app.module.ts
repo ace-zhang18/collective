@@ -20,7 +20,6 @@ import { ArtworksComponent } from './artworks/artworks.component';
 import { GalleriesComponent } from './galleries/galleries.component';
 import { ShopsComponent } from './shops/shops.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

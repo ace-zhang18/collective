@@ -1,6 +1,5 @@
 nav a {
     color: white;
-    font-family: acid;
     font-size: 20px;
     letter-spacing: 2px;
     margin: 0 10px;
@@ -15,4 +14,9 @@ nav a {
 
   .search:hover .input{
     width: 50%;
+  }
+
+  .bottom_link {
+    padding-left: 5.5%;
+    font-family: "Franklin Gothic";
   }

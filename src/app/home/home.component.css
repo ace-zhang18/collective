@@ -1,21 +1,85 @@
-
-
-table {
-  border-collapse: collapse;
+/* SCROLLBAR */
+/* Let's get this party started */
+#style-1::-webkit-scrollbar {
+    width: 10px;
 }
 
-.home-feed{
-    width: 40%;
-}
-.front-display{
-    width: 40%;
-}
-
-.buffer{
-    width: 10%;
+/* Track */
+#style-1::-webkit-scrollbar-track {
+    background: goldenrod;
+    border: 4px solid transparent;
+    background-clip: content-box;   /* THIS IS IMPORTANT */
 }
 
-.showcase-img{
-    height: 280px;
-    margin-right: 12px
+/* Handle */
+#style-1::-webkit-scrollbar-thumb {
+    background: goldenrod;
 }
+
+.banner_feature{
+    display: block;
+    max-width: 597px;
+    max-height: 165px;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.colfill{
+    width: 1240px; 
+}
+
+.half_content{
+    width: 600px
+}
+
+.row_cell{
+    display: inline-block;
+    max-width: 118px;
+    max-height: 165px;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.page_text{
+    color: #C3BB97;
+}
+
+.header1{
+    height: 13px;
+    font-size: 13px;
+}
+
+.graphic_button {
+    outline:none;
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.rotate_img_90 {
+    -webkit-transform:rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+.rotate_img_180 {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  
+.rotate_img_270 {
+    -webkit-transform:rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }

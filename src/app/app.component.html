@@ -1,40 +1,92 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="height:75px; position: relative;"> 
-  <div style="height:100%; position: absolute;">
-    <img src="assets/logo.png" style="height:100%">
-  </div>
-  <div style="height: 35px; width: calc(90% - 110px);  position: absolute; left: 110px; top:18px; border-bottom: 1px solid #00ffee;">
-    <table style="width: 100%;">
-      <tr>
-        <td>
-          <nav style="margin-left: 10px; display: inline-block;">
-            <a routerLink="/">HOME</a>
-            <a routerLink="/artworks/100">MARKET</a> 
-            <a routerLink="/galleries/100">GALLERY</a>
-            <a routerLink="/shops/1">COLLECTIVES</a>
-            <a routerLink="/shops/1">EVENTS</a>
-            <a routerLink="/forums/0">FORUMS</a> 
-          </nav>
-        </td>
-        <td style="text-align: right;">
-          <div *ngIf="!searching; else elseBlock">
-            <button (click)="displaySearch()" style="background: rgba(255,255,255,0.8);">Search</button>
-          </div>
-          <ng-template #elseBlock>
-            <div class="search">
-                <input type="text" class="input" style="display: inline-block; border: 1px solid transparent; background: rgba(255,255,255,0.8); border: none;" [ngClass]="{'expand': searching}">
-              <button style="display: inline-block; background: rgba(255,255,255,0.8);"><img src="assets/search-icon.jpg" style="max-height: 12px;"></button>
-            </div>
-          </ng-template>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div style="height: 40px; width: 1px; position: absolute; left: 90%; top:13px; border-left: 1px solid #00ffee;">
-    <!--DO NOT FILL-->
-  </div>
-  <div style="height: 52px; width: 10%; position: absolute; left: 90%; border: 1px solid #00ffee;">
-    <img src="assets/ho.png" style="position: absolute; height: 90%; left: 1%; top: 5%">
-  </div>
+<div style="height:50px; position: relative; border-bottom: 1px solid gold; background-color: rgba(0, 0, 0, 1)">
+  <table style="height:100%; width: 100%">
+    <td style="width: 20%;">
+      <img src="assets/corner_logo.png" style="max-height: 45px; padding-left: 25px">
+    </td>
+    <td style="width: 60%; height: 100%; position:relative;">
+      <nav class="menu_option" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+        <a routerLink="/">HOME</a>
+        <a routerLink="/artworks/100">MARKET</a> 
+        <a routerLink="/galleries/100">GALLERY</a>
+        <a routerLink="/shops/1">COLLECTIVES</a>
+        <a routerLink="/shops/1">EVENTS</a>
+        <a routerLink="/forums/0">FORUMS</a> 
+      </nav>
+    </td>
+    <td style="width: 20%;">
+      <div *ngIf="!searching; else elseBlock">
+        <button (click)="displaySearch()" style="background: rgba(255,255,255,0.8);">Search</button>
+      </div>
+      <ng-template #elseBlock>
+        <div class="search">
+            <input type="text" class="input" style="display: inline-block; border: 1px solid transparent; background: rgba(255,255,255,0.8); border: none;" [ngClass]="{'expand': searching}">
+            <button style="display: inline-block; background: rgba(255,255,255,0.8);"><img src="assets/search-icon.jpg" style="max-height: 12px;"></button>
+        </div>
+      </ng-template>
+    </td>
+  </table>
 </div>
-<router-outlet></router-outlet>
+<div style="width: 100%; text-align: center;">
+  <img src="assets/title.png" style="padding-top:5vh; padding-bottom:10px; max-height: 200px">
+</div>
+<div style="width: 100%; height: auto; text-align: center; background-color: rgba(0, 0, 0, 0.95);">
+  <router-outlet></router-outlet>
+</div>
+<div style="width: 100%; text-align: center; margin-top: 30px; margin-bottom: 30px">
+  <img src="assets/border_gap.png" style="margin-right: auto; margin-left: auto">
+</div>
+<div style="width: 100%; height: auto; background-color: rgba(0, 0, 0, 0.8);  padding-top: 50px; padding-bottom: 50px;">
+  <table style="width: 100%; height: 150px; color: white">
+    <tr>
+      <td rowspan="4" style="text-align: center;">
+        <img src="assets/title.png" style="width:200px;">
+      </td>
+      <td class="bottom_link">
+        ABOUT
+      </td>
+      <td class="bottom_link">
+        DEVELOPERS
+      </td>
+      <td class="bottom_link">
+        PRIVACY POLICY
+      </td>
+      <td rowspan="4" style="text-align: center;">
+        <img src="assets/social_media.png"  style="width:200px;">
+      </td>
+    </tr>
+    <tr>
+      <td class="bottom_link">
+        CONTACT
+      </td>
+      <td  class="bottom_link">
+        ADVERTISE
+      </td>
+      <td class="bottom_link">
+        COPYRIGHT POLICY
+      </td>
+    </tr>
+    <tr>
+      <td class="bottom_link">
+        CORE MEMBERSHIP      
+      </td>
+      <td class="bottom_link">
+        TERMS OF SERVICE
+      </td>
+      <td class="bottom_link">
+        HELP AND FAQ
+      </td>
+    </tr>
+    <tr>
+      <td class="bottom_link">
+        CAREERS  
+      </td>
+      <td class="bottom_link">
+        ETIQUETTE
+      </td>
+      <td class="bottom_link">
+
+      </td>
+    </tr>
+  </table>
+</div>
