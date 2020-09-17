@@ -98,15 +98,19 @@ export class HomeComponent implements OnInit {
   }
 
   showStatus(index: number){
-    if(index == this.prevIndex){
-      this.prevIndex = -1
-    }else{
+    if(this.prevIndex == -1){ //just started
+      this.focus[index] = true;
+      this.panelOn = true;
+    }
+
+    if(index == this.prevIndex){ //toggling the same button
+      this.focus[index] = !this.focus[index]
       this.panelOn = !this.panelOn
+    }else if(this.prevIndex >= 0){ //switching to another status
+      this.focus[this.prevIndex] = false
+      this.focus[index] = true
+      this.panelOn = true
     }
-    if(this.prevIndex >= 0){
-      this.focus[this.prevIndex] = false;
-    }
-    this.focus[index] = !this.focus[index]
     this.prevIndex = index
   }
 
