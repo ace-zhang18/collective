@@ -17,10 +17,7 @@
 }
 
 .banner_feature{
-    display: block;
-    object-fit: contain;
-    object-position: center;
-    overflow: hidden;
+
 }
 
 .colfill{
@@ -36,6 +33,14 @@
     height: 20vh;
     width: 20%;
     overflow: hidden;
+    position: relative;
+}
+
+.absolute_center{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .page_text{

@@ -46,27 +46,27 @@
       <div style="width: 100%; height: 40vh;">
         <table style="width: 100%; height: 40vh;">
           <tr style="width: 100%; height: 50%;">
-            <td class="banner_feature" style="width: 100%; height: 20vh" colspan="5">
-              <div style="width: 100%; height:20vh; overflow: hidden; align-content: left;">
-                <img #preview0 style="display:block;" (load)="loadBanner(preview0)" src="assets/136.jpg">
+            <td style="width: 100%; height: 20vh; display: block; overflow: hidden;" colspan="5">
+              <div style="width: 100%; height:20vh; overflow: hidden; align-content: left; position:relative">
+                <img #preview0 class="absolute_center" style="display:block;" (load)="loadBanner(preview0)" src="assets/136.jpg">
               </div>
             </td>
           </tr>
           <tr style="height: 20vh;">
             <td class="row_cell">
-              <img #preview1 (load)="onLoad(preview1)" class="featured_row" src="assets/100.gif">
+              <img #preview1 (load)="onLoad(preview1)" class="featured_row absolute_center" src="assets/100.gif">
             </td>
             <td class="row_cell">
-              <img #preview2 (load)="onLoad(preview2)" class="featured_row" src="assets/124.jpg">
+              <img #preview2 (load)="onLoad(preview2)" class="featured_row absolute_center" src="assets/124.jpg">
             </td>
             <td class="row_cell">
-              <img #preview3 (load)="onLoad(preview3)" class="featured_row" src="assets/108.gif">                
+              <img #preview3 (load)="onLoad(preview3)" class="featured_row absolute_center" src="assets/108.gif">                
             </td>
             <td class="row_cell">
-              <img #preview4 (load)="onLoad(preview4)" class="featured_row" src="assets/133.jpg">                                
+              <img #preview4 (load)="onLoad(preview4)" class="featured_row absolute_center" src="assets/133.jpg">                                
             </td>
             <td class="row_cell">
-              <img #preview5 (load)="onLoad(preview5)" class="featured_row" src="assets/140.jpg">                   
+              <img #preview5 (load)="onLoad(preview5)" class="featured_row absolute_center" src="assets/140.jpg">                   
             </td>
           </tr>
         </table>
