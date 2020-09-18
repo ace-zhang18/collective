@@ -17,7 +17,7 @@ const bannerHeight = 110
     ExpandAndContractAnimation(150, 400),
     WidenAndShrinkAnimation(600, 620),
     WidenAndShrinkAnimation(0, 520),
-    WidenAndShrinkAnimation(0, 100) 
+    WidenAndShrinkAnimation(0, 100)
   ]
 })
 export class HomeComponent implements OnInit {
