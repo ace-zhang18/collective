@@ -1,7 +1,7 @@
 <table style="width: 60vw; margin-left: auto; margin-right: auto; border-collapse: collapse;">
   <tr style="height: 2vh; width: 100%" >
     <td colspan="2" style="height: 1.6vh; width: 100%; padding-top: 0.8vh; padding-bottom: 1.6vh" >
-      <table style="margin-right: auto; padding-top: 7px; padding-bottom: 8px; ">
+      <table style="margin-right: auto; padding-top: 1vh; padding-bottom: 1vh; ">
         <tr>
           <td class="header1 page_text" style="width:15%; text-align: right ;">
             RECENT UPDATES
@@ -16,13 +16,14 @@
       </table>      
     </td>
   </tr>
-  <tr style="height:20vh; width: 100%;">
-    <td class="page_text" style="height: 100%; width: 50%; font-size: 0.5vw; padding-right: 1vw; border-right: 1px solid goldenrod;">
+  <tr style="height:40vh; width: 100%;">
+    <td class="page_text" style=" height: 40vh; width: 50%; font-size: 0.5vw; padding-right: 1vw;
+                                  border-right: 1px solid goldenrod;">
       <div style="height: 40vh; width: 100%; padding-left: 1vw; padding-right: 1vw;
                   background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
                   overflow-x: hidden; overflow-y:scroll; direction: rtl;" id="style-1">
         <table style="width: 100%; height: 100%;">
-          <tr *ngFor="let announcement of site_announcements" style="height: 100px; width: 100%;" >
+          <tr *ngFor="let announcement of site_announcements" style="height: 10vh; width: 100%;" >
             <td style="height:10vh;">
               <div style="height:2vh; text-align: left">
                 <h5>{{announcement.title}}</h5>
@@ -41,15 +42,17 @@
         </table>
       </div>
     </td>
-    <td style="height: 100%; width: 50%; color: white; font-size: 5px; align-content: left; padding-left: 13px; border-left: 1px solid goldenrod;">
-      <div style="width: 100%; height: 100%; ; margin-top: auto; margin-bottom: auto;">
-        <table style="width: 100%; height: 100%; ;  margin-left:auto; margin-right:0; border-collapse: collapse;">
-          <tr style="width: 100%; display: block;">
-            <td class="banner_feature" colspan="5">
-              <img #preview0 (load)="loadBanner(preview0)" src="assets/136.jpg">
+    <td style="height: 100%; width: 50%; color: white; font-size: 0.5vw; align-content: left; padding-left: 1vw; border-left: 1px solid goldenrod;">
+      <div style="width: 100%; height: 40vh;">
+        <table style="width: 100%; height: 40vh;">
+          <tr style="width: 100%; height: 50%;">
+            <td class="banner_feature" style="width: 100%; height: 20vh" colspan="5">
+              <div style="width: 100%; height:20vh; overflow: hidden; align-content: left;">
+                <img #preview0 style="display:block;" (load)="loadBanner(preview0)" src="assets/136.jpg">
+              </div>
             </td>
           </tr>
-          <tr style="display: block;">
+          <tr style="height: 20vh;">
             <td class="row_cell">
               <img #preview1 (load)="onLoad(preview1)" class="featured_row" src="assets/100.gif">
             </td>
@@ -72,17 +75,17 @@
   </tr>
   <tr style="width: 100%;">
     <td colspan="2" class="content_title">
-      <div style="padding-top: 30px;">
+      <div style="padding-top: 3vh;">
         <table style="margin-left: auto; margin-right: auto; height: 5vh;">
           <tr>
             <td>
-              <img class="page_text" src="assets/events_l.png" style="max-height: 20px; width: auto; margin-right: 3px;">
+              <img class="page_text" src="assets/events_l.png" style="max-height: 2vh; width: auto; margin-right: 0.165vw">
             </td>
             <td>
-              <p style="font-size: 18px;">EVENTS</p>
+              <p style="font-size: 1vw; vertical-align: middle; display:table-cell" >EVENTS</p>
             </td>
             <td>
-              <img class="page_text" src="assets/events_r.png"  style="max-height: 20px; width: auto" >
+              <img class="page_text" src="assets/events_r.png"  style="max-height: 2vh; width: auto" >
             </td>
           </tr>
         </table>
@@ -138,10 +141,10 @@
                     <button class="graphic_button" (click)="showStatus(i)">
                       <div *ngIf="!focus[i]; then thenBlock else elseBlock"></div>
                       <ng-template #thenBlock>
-                        <img src="assets/nav_arrow.png" style="max-height: 2vh;" class="rotate_img_180">
+                        <img src="assets/nav_arrow.png" style="max-height: 4vh;" class="rotate_img_180">
                       </ng-template>
                       <ng-template #elseBlock>
-                        <img src="assets/nav_arrow.png" style="max-height: 2vh;" class="rotate_img_270">
+                        <img src="assets/nav_arrow.png" style="max-height: 4vh;" class="rotate_img_270">
                       </ng-template>
                     </button>                 
                   </td>
@@ -151,8 +154,8 @@
           </td>
           <td style="height: 40vh;">
             <div [@WidenAndShrinkAnimation0by100]="panelOn ? '1' : '0'"
-            style="height: 100%; width: 0;" class="o1">
-              <svg class="o2" style="height: 40vh; width: 100%" viewBox="0 0 100 450" preserveAspectRatio="none">
+            style="height: 100%; width: 0;">
+              <svg style="height: 40vh; width: 100%" viewBox="0 0 100 450" preserveAspectRatio="none">
                 <polygon points="0,225 100,0 100,450" style="fill:rgba(60,60,60, 0.8);" />
               </svg>
             </div>

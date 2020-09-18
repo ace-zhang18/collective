@@ -4,10 +4,12 @@ import { HomeHttpService } from './home-http.service'
 import { ExpandAndContractAnimation } from '../utils/expand-and-contract.animation';
 import { WidenAndShrinkAnimation } from '../utils/widen-and-shrink.animation';
 
-const minWidth = 125
-const minHeight = 110
-const bannerWidth = 630
-const bannerHeight = 110
+const minWidth = 6
+const minHeight = 20
+const bannerWidth = 30
+const bannerHeight = 20
+const viewWidth = window.innerWidth/100
+const viewHeight = window.innerHeight/100
 
 @Component({
   selector: 'app-home',
@@ -115,21 +117,23 @@ export class HomeComponent implements OnInit {
   }
 
   onLoad(preview: any){
-    if ((preview.offsetHeight/preview.offsetWidth) > (minHeight/minWidth)){
-      preview.style.width = minWidth.toString() + "px";
+    if (preview.offsetHeight/preview.offsetWidth > (minHeight*viewHeight)/(minWidth*viewWidth)){
+      preview.style.width = "100%";
       preview.style.height = "auto";
+      preview.style.transform = `translate(0, -${(preview.offsetHeight/viewHeight)-(minHeight)}vh)`
     }else{
-      preview.style.height = minHeight.toString() + "px";
+      preview.style.height = "100%";
       preview.style.width = "auto";
+      preview.style.transform = `translate(-${(preview.offsetWidth/viewWidth)-(minWidth)}vw)`
     }
   }
 
   loadBanner(preview: any){
-    if ((preview.offsetHeight/preview.offsetWidth) > (bannerHeight/bannerWidth)){
-      preview.style.width = bannerWidth.toString() + "px";
+    if (preview.offsetHeight/preview.offsetWidth > (bannerHeight*viewHeight)/(bannerWidth*viewWidth)){
+      preview.style.width = "100%";
       preview.style.height = "auto";
     }else{
-      preview.style.height = bannerHeight.toString() + "px";
+      preview.style.height = "100%";
       preview.style.width = "auto";
     }
   }
