@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit {
     if (preview.offsetHeight/preview.offsetWidth > (minHeight*viewHeight)/(minWidth*viewWidth)){
       preview.style.width = "100%";
       preview.style.height = "auto";
-      preview.style.transform = `translate(0, -${(preview.offsetHeight/viewHeight)-(minHeight)}vh)`
+      preview.style.transform = `translate(0, ${(preview.offsetHeight/viewHeight)-(minHeight)}vh)`
     }else{
       preview.style.height = "100%";
       preview.style.width = "auto";
@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
     if (preview.offsetHeight/preview.offsetWidth > (bannerHeight*viewHeight)/(bannerWidth*viewWidth)){
       preview.style.width = "100%";
       preview.style.height = "auto";
-      preview.style.transform = `translate(0, -${(preview.offsetHeight/viewHeight)-(minHeight)}vh)`
+      preview.style.transform = `translate(0, ${(preview.offsetHeight/viewHeight)-(minHeight)}vh)`
     }else{
       preview.style.height = "100%";
       preview.style.width = "auto";
