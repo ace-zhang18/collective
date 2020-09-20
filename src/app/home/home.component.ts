@@ -16,10 +16,10 @@ const viewHeight = window.innerHeight/100
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   animations: [
-    ExpandAndContractAnimation(150, 400),
-    WidenAndShrinkAnimation(600, 620),
-    WidenAndShrinkAnimation(0, 520),
-    WidenAndShrinkAnimation(0, 100)
+    ExpandAndContractAnimation(15, 40),
+    WidenAndShrinkAnimation(30, 45),
+    WidenAndShrinkAnimation(0, 40),
+    WidenAndShrinkAnimation(0, 5)
   ]
 })
 export class HomeComponent implements OnInit {
