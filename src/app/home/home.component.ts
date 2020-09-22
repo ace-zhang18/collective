@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { HomeHttpService } from './home-http.service'
 import { ExpandAndContractAnimation } from '../utils/expand-and-contract.animation';
@@ -28,6 +28,9 @@ export class HomeComponent implements OnInit {
   prevIndex = -1;
   index = -1;
   scrollRange = 0;
+  points = "0,50 100,0 100,100"
+
+  @ViewChild ('statusBox') statusBox;
 
   site_announcements = [
     {
@@ -98,7 +101,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    
+    this.scrollRange = this.statusBox.nativeElement.scrollHeight - this.statusBox.nativeElement.clientHeight;
+    console.log(this.scrollRange)
   }
 
   toggle() {
@@ -120,7 +124,12 @@ export class HomeComponent implements OnInit {
       this.focus[index] = true
       this.panelOn = true
     }
+    this.updatePoint();
     this.prevIndex = index
+  }
+
+  onStatusScroll(event){
+    this.updatePoint();
   }
 
   onLoad(preview: any){
@@ -143,5 +152,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  update
+  updatePoint(){
+    let pointTo =  (((this.index + .5)/ this.i) * this.statusBox.nativeElement.scrollHeight - this.statusBox.nativeElement.scrollTop) / this.statusBox.nativeElement.clientHeight * 100;
+    this.points = `0,${pointTo} 100,0 100,100`
+  }
 }

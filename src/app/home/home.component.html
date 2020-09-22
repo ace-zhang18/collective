@@ -21,7 +21,7 @@
                                   border-right: 1px solid goldenrod;">
       <div style="height: 40vh; width: 100%; padding-left: 1vw; padding-right: 1vw;
                   background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
-                  overflow-x: hidden; overflow-y:scroll; direction: rtl;" id="style-1">
+                  overflow-x: hidden; overflow-y:scroll; direction: rtl;" class="style-1">
         <table style="width: 100%; height: 100%;">
           <tr *ngFor="let announcement of site_announcements" style="height: 10vh; width: 100%;" >
             <td style="height:10vh;">
@@ -126,17 +126,9 @@
             <div [@WidenAndShrinkAnimation30by30]="panelOn ? '0' : '1'"
                   style="width: calc(100% - 2vw); height: 20vh; margin-top: auto; margin-bottom: auto; padding-left: 1vw; padding-right: 1vw;
                         background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
-                        overflow-x: hidden; overflow-y:scroll;" id="style-1">
+                        overflow-x: hidden; overflow-y:scroll; direction: rtl;" (scroll)="onStatusScroll($event)" class="style-1" #statusBox>
               <table style="width: 100%; height: 40vh;">
                 <tr *ngFor="let announcement of site_announcements;let i=index;" style="height: 1.5vh; width: 100%;">
-                  <td style="height:1vh; width: 90%;">
-                    <div style="height:0.3vh; text-align: left">
-                      <h3>{{announcement.title}}</h3>
-                    </div>
-                    <div style="height:0.4vh; text-align: left; line-height: .1vh ;overflow: hidden; border-bottom: 1px solid goldenrod;">
-                      <p class="paragraph">{{announcement.body}}</p>
-                    </div>
-                  </td>
                   <td style="width: 10%;">
                     <button class="graphic_button" (click)="showStatus(i)">
                       <div *ngIf="!focus[i]; then thenBlock else elseBlock"></div>
@@ -148,6 +140,14 @@
                       </ng-template>
                     </button>                 
                   </td>
+                  <td style="height:1vh; width: 90%;">
+                    <div style="height:0.3vh; text-align: left">
+                      <h3>{{announcement.title}}</h3>
+                    </div>
+                    <div style="height:0.4vh; text-align: left; line-height: .1vh ;overflow: hidden; border-bottom: 1px solid goldenrod;">
+                      <p class="paragraph">{{announcement.body}}</p>
+                    </div>
+                  </td>
                 </tr>
               </table>
             </div>
@@ -155,8 +155,8 @@
           <td style="height: 20vh;">
             <div [@WidenAndShrinkAnimation0by3]="panelOn ? '1' : '0'"
             style="height: 100%; width: 0;">
-              <svg style="height: 20vh; width: 100%" viewBox="0 0 100 450" preserveAspectRatio="none">
-                <polygon points="0,225 100,0 100,450" style="fill:rgba(60,60,60, 0.8);" />
+              <svg style="height: 20vh; width: 100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon [attr.points]="points" style="fill:rgba(60,60,60, 0.8);" />
               </svg>
             </div>
           </td>
@@ -164,7 +164,7 @@
             <div [@WidenAndShrinkAnimation0by27]="panelOn ? '1' : '0'"
             style="width: 0; height: 20vh; margin-top: auto; margin-bottom: auto;
                   background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
-                  overflow-x: hidden; overflow-y:scroll;" id="style-1">
+                  overflow-x: hidden; overflow-y:hidden;">
 
             </div>
           </td>
