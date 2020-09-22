@@ -118,16 +118,16 @@
     </td>
   </tr>
   
-  <tr style="height: 40vh;">
-    <td colspan="2" class="colfill page_text" style="height: 100%; font-size: 0.5vw;">
+  <tr style="height: 20vh;">
+    <td colspan="2" class="page_text" style="height: 100%; font-size: 0.5vw;">
       <table style="height:100%">
-        <tr style="height: 40vh;">
+        <tr style="height: 20vh;">
           <td style="width: calc(100%-.4vw)">
             <div [@WidenAndShrinkAnimation30by30]="panelOn ? '0' : '1'"
-                  style="width: calc(100% - 2vw); height: 40vh; margin-top: auto; margin-bottom: auto; padding-left: 1vw; padding-right: 1vw;
+                  style="width: calc(100% - 2vw); height: 20vh; margin-top: auto; margin-bottom: auto; padding-left: 1vw; padding-right: 1vw;
                         background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
                         overflow-x: hidden; overflow-y:scroll;" id="style-1">
-              <table style="width: 100%; height: 100%;">
+              <table style="width: 100%; height: 40vh;">
                 <tr *ngFor="let announcement of site_announcements;let i=index;" style="height: 1.5vh; width: 100%;">
                   <td style="height:1vh; width: 90%;">
                     <div style="height:0.3vh; text-align: left">
@@ -152,17 +152,17 @@
               </table>
             </div>
           </td>
-          <td style="height: 40vh;">
-            <div [@WidenAndShrinkAnimation0by5]="panelOn ? '1' : '0'"
+          <td style="height: 20vh;">
+            <div [@WidenAndShrinkAnimation0by3]="panelOn ? '1' : '0'"
             style="height: 100%; width: 0;">
-              <svg style="height: 40vh; width: 100%" viewBox="0 0 100 450" preserveAspectRatio="none">
+              <svg style="height: 20vh; width: 100%" viewBox="0 0 100 450" preserveAspectRatio="none">
                 <polygon points="0,225 100,0 100,450" style="fill:rgba(60,60,60, 0.8);" />
               </svg>
             </div>
           </td>
           <td>
-            <div [@WidenAndShrinkAnimation0by40]="panelOn ? '1' : '0'"
-            style="width: 0; height: 100%; margin-top: auto; margin-bottom: auto;
+            <div [@WidenAndShrinkAnimation0by27]="panelOn ? '1' : '0'"
+            style="width: 0; height: 20vh; margin-top: auto; margin-bottom: auto;
                   background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
                   overflow-x: hidden; overflow-y:scroll;" id="style-1">
 

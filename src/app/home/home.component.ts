@@ -17,15 +17,17 @@ const viewHeight = window.innerHeight/100
   styleUrls: ['./home.component.css'],
   animations: [
     ExpandAndContractAnimation(15, 40),
-    WidenAndShrinkAnimation(30, 45),
-    WidenAndShrinkAnimation(0, 40),
-    WidenAndShrinkAnimation(0, 5)
+    WidenAndShrinkAnimation(30, 30),
+    WidenAndShrinkAnimation(0, 27),
+    WidenAndShrinkAnimation(0, 3)
   ]
 })
 export class HomeComponent implements OnInit {
   isOpen = false;
   panelOn = false;
   prevIndex = -1;
+  index = -1;
+  scrollRange = 0;
 
   site_announcements = [
     {
@@ -95,11 +97,16 @@ export class HomeComponent implements OnInit {
 
   }
 
+  ngAfterViewInit(){
+    
+  }
+
   toggle() {
     this.isOpen = !this.isOpen;
   }
 
   showStatus(index: number){
+    this.index = index;
     if(this.prevIndex == -1){ //just started
       this.focus[index] = true;
       this.panelOn = true;
@@ -135,4 +142,6 @@ export class HomeComponent implements OnInit {
       preview.style.width = "auto";
     }
   }
+
+  update
 }
