@@ -1,13 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { HomeHttpService } from './home-http.service'
 import { ExpandAndContractAnimation } from '../utils/expand-and-contract.animation';
 import { WidenAndShrinkAnimation } from '../utils/widen-and-shrink.animation';
 
-const minWidth = 6
-const minHeight = 20
-const bannerWidth = 30
-const bannerHeight = 20
 const viewWidth = window.innerWidth/100
 const viewHeight = window.innerHeight/100
 
@@ -30,6 +25,7 @@ export class HomeComponent implements OnInit {
   scrollRange = 0;
   points = "0,50 100,0 100,100"
 
+  //works properly: DO NOT TOUCh
   @ViewChild ('statusBox') statusBox;
 
   site_announcements = [
@@ -101,8 +97,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    this.scrollRange = this.statusBox.nativeElement.scrollHeight - this.statusBox.nativeElement.clientHeight;
-    console.log(this.scrollRange)
+
   }
 
   toggle() {
@@ -132,8 +127,10 @@ export class HomeComponent implements OnInit {
     this.updatePoint();
   }
 
-  onLoad(preview: any){
-    if (preview.offsetHeight/preview.offsetWidth > (minHeight*viewHeight)/(minWidth*viewWidth)){
+  onLoad(event: any){
+    let preview = event.target
+
+    if (preview.offsetHeight/preview.offsetWidth > 4/3){
       preview.style.width = "100%";
       preview.style.height = "auto";
     }else{
@@ -142,8 +139,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  loadBanner(preview: any){
-    if (preview.offsetHeight/preview.offsetWidth > (bannerHeight*viewHeight)/(bannerWidth*viewWidth)){
+  loadBanner(event: any){
+    let preview = event.target
+
+    console.log(preview.offsetHeight, preview.offsetWidth, 4/15)
+
+    if (preview.offsetHeight/preview.offsetWidth > 4/15){
       preview.style.width = "100%";
       preview.style.height = "auto";
     }else{

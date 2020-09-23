@@ -16,10 +16,10 @@
       </table>      
     </td>
   </tr>
-  <tr style="height:40vh; width: 100%;">
-    <td class="page_text" style=" height: 40vh; width: 50%; font-size: 0.5vw; padding-right: 1vw;
+  <tr style="width: 100%;">
+    <td class="page_text" style=" height: 100%; width: 50%; font-size: 0.5vw; padding-right: 1vw;
                                   border-right: 1px solid goldenrod;">
-      <div style="height: 40vh; width: 100%; padding-left: 1vw; padding-right: 1vw;
+      <div style="height: 100%; width: 100%; padding-left: 1vw; padding-right: 1vw;
                   background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
                   overflow-x: hidden; overflow-y:scroll; direction: rtl;" class="style-1">
         <table style="width: 100%; height: 100%;">
@@ -42,31 +42,31 @@
         </table>
       </div>
     </td>
-    <td style="height: 100%; width: 50%; color: white; font-size: 0.5vw; align-content: left; padding-left: 1vw; border-left: 1px solid goldenrod;">
-      <div style="width: 100%; height: 40vh;">
-        <table style="width: 100%; height: 40vh;">
+    <td style="width: 50%; height: 100%; color: white; font-size: 0.5vw; align-content: left; padding-left: 1vw; border-left: 1px solid goldenrod;">
+      <div style="width: 100%; height: 100%;">
+        <table style="width: 100%; height: 15.5vw;">
           <tr style="width: 100%; height: 50%;">
-            <td style="width: 100%; height: 20vh; display: block; overflow: hidden;" colspan="5">
-              <div style="width: 100%; height:20vh; overflow: hidden; align-content: left; position:relative">
-                <img #preview0 class="absolute_center" style="display:block;" (load)="loadBanner(preview0)" src="assets/136.jpg">
+            <td style="width: 100%; height: 100%; display: block; overflow: hidden;" colspan="5">
+              <div style="width: 100%; height:100%; overflow: hidden; align-content: left; position:relative">
+                <img class="absolute_center" (load)="loadBanner($event)" src="assets/136.jpg">
               </div>
             </td>
           </tr>
-          <tr style="height: 20vh;">
-            <td class="row_cell">
-              <img #preview1 (load)="onLoad(preview1)" class="featured_row absolute_center" src="assets/100.gif">
+          <tr style="width: 100%; height: 50%;">
+            <td class="rowStyle">
+              <img (load)="onLoad($event)" class="absolute_center" src="assets/100.gif">
             </td>
-            <td class="row_cell">
-              <img #preview2 (load)="onLoad(preview2)" class="featured_row absolute_center" src="assets/124.jpg">
+            <td class="rowStyle">
+              <img (load)="onLoad($event)" class="absolute_center" src="assets/124.jpg">
             </td>
-            <td class="row_cell">
-              <img #preview3 (load)="onLoad(preview3)" class="featured_row absolute_center" src="assets/108.gif">                
+            <td class="rowStyle">
+              <img (load)="onLoad($event)" class="absolute_center" src="assets/108.gif">                
             </td>
-            <td class="row_cell">
-              <img #preview4 (load)="onLoad(preview4)" class="featured_row absolute_center" src="assets/133.jpg">                                
+            <td class="rowStyle">
+              <img (load)="onLoad($event)" class="absolute_center" src="assets/133.jpg">                                
             </td>
-            <td class="row_cell">
-              <img #preview5 (load)="onLoad(preview5)" class="featured_row absolute_center" src="assets/140.jpg">                   
+            <td class="rowStyle">
+              <img (load)="onLoad($event)" class="absolute_center" src="assets/140.jpg">                   
             </td>
           </tr>
         </table>
@@ -118,17 +118,17 @@
     </td>
   </tr>
   
-  <tr style="height: 20vh;">
+  <tr>
     <td colspan="2" class="page_text" style="height: 100%; font-size: 0.5vw;">
       <table style="height:100%">
-        <tr style="height: 20vh;">
+        <tr>
           <td style="width: calc(100%-.4vw)">
             <div [@WidenAndShrinkAnimation30by30]="panelOn ? '0' : '1'"
-                  style="width: calc(100% - 2vw); height: 20vh; margin-top: auto; margin-bottom: auto; padding-left: 1vw; padding-right: 1vw;
+                  style="width: calc(100% - 2vw); height: 100%; margin-top: auto; margin-bottom: auto; padding-left: 1vw; padding-right: 1vw;
                         background-image: linear-gradient(rgba(60,60,60, 0.8), rgba(20,20,20, 0.8));
                         overflow-x: hidden; overflow-y:scroll; direction: rtl;" (scroll)="onStatusScroll($event)" class="style-1" #statusBox>
-              <table style="width: 100%; height: 40vh;">
-                <tr *ngFor="let announcement of site_announcements;let i=index;" style="height: 1.5vh; width: 100%;">
+              <table style="width: 100%;">
+                <tr *ngFor="let announcement of site_announcements;let i=index;" style="height: 5vh; width: 100%;">
                   <td style="width: 10%;">
                     <button class="graphic_button" (click)="showStatus(i)">
                       <div *ngIf="!focus[i]; then thenBlock else elseBlock"></div>

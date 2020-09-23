@@ -24,11 +24,10 @@
     width: 40wh
 }
 
-.row_cell{
-    display: inline-block;
-    height: 20vh;
-    width: 20%;
+.rowStyle{
     position: relative;
+    overflow:hidden;
+    width: 20%;
 }
 
 .absolute_center{
