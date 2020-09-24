@@ -1,13 +1,13 @@
 /* SCROLLBAR */
 /* Let's get this party started */
 .style-1::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 /* Track */
 .style-1::-webkit-scrollbar-track {
     background: #B89859;
-    border: 4px solid transparent;
+    border: 2px solid transparent;
     background-clip: content-box;   /* THIS IS IMPORTANT */
 }
 
@@ -34,8 +34,7 @@
 }
 
 .header1{
-    height: 13px;
-    font-size: 13px;
+    font-size: 1vw;
 }
 
 .graphic_button {

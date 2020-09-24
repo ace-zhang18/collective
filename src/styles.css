@@ -48,3 +48,10 @@
     height: 100%;
     width: 100%;
   }
+
+  .gold_border_gradient{
+    -webkit-background-image: -webkit-linear-gradient( left, #996F31, #B89859, #996F31);
+    -moz-background-image: -moz-linear-gradient( left, #996F31, #B89859, #996F31);
+    -o-background-image: -o-linear-gradient( left, #996F31, #B89859, #996F31);
+    background-image: linear-gradient( to right, #996F31, #B89859, #996F31);
+  }
