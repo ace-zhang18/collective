@@ -47,6 +47,20 @@
     outline: inherit;
 }
 
+.row_div{
+    width: calc(100%); 
+    height: calc(100% - 2px); 
+    top: 0px; 
+    overflow: hidden; 
+    position: absolute;
+}
+
+.row_container{
+    width: calc(100 - 2px);
+    height: 7.75vw;
+    position: relative
+}
+
 .rotate_img_90 {
     -webkit-transform:rotate(90deg);
     -moz-transform: rotate(90deg);
