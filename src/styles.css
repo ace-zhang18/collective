@@ -5,7 +5,7 @@
     height: 100%;
     margin: 0;
     background-image:url('src/assets/raven-background.jpg');
-    background-size: 100%;
+    background-size: auto;
     background-position: center;
     background-attachment: fixed;
   }
